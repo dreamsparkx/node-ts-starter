@@ -33,5 +33,9 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
+          npm run test
         env:
           CI: true
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          MONGODB_URI_LOCAL: ${{ secrets.MONGODB_URI_LOCAL }}
