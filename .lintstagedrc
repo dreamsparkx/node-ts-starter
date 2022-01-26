@@ -1,0 +1,4 @@
+{
+    "**/*.{js,ts}": ["npm run lint"],
+    "**/test/**/*.test.(ts|js)": ["npm run test"]
+}

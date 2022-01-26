@@ -15,11 +15,15 @@
     "watch-test": "npm run test -- --watchAll",
     "doc": "ts-node tools/typedoc.ts",
     "doc:serve": "serve docs",
-    "coverage:serve": "serve coverage/lcov-report"
+    "coverage:serve": "serve coverage/lcov-report",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "author": "Gaurav Bharti",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/async": "^3.2.12",
     "@types/bcrypt": "^5.0.0",
     "@types/body-parser": "^1.19.2",
@@ -54,7 +58,9 @@
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
     "jest": "^27.4.7",
+    "lint-staged": "^12.3.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "sass": "^1.47.0",
