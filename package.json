@@ -16,7 +16,8 @@
     "doc": "ts-node tools/typedoc.ts",
     "doc:serve": "serve docs",
     "coverage:serve": "serve coverage/lcov-report",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "npm test && lint-staged"
   },
   "author": "Gaurav Bharti",
   "license": "MIT",
@@ -59,6 +60,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.0",
     "jest": "^27.4.7",
+    "lint-staged": "^12.3.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "sass": "^1.47.0",
