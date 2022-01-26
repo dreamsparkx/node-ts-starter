@@ -17,7 +17,7 @@
     "doc:serve": "serve docs",
     "coverage:serve": "serve coverage/lcov-report",
     "prepare": "husky install",
-    "pre-commit": "npm test && lint-staged"
+    "pre-commit": "lint-staged"
   },
   "author": "Gaurav Bharti",
   "license": "MIT",
