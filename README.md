@@ -1,6 +1,6 @@
 # node-ts-starter
 
-[![Dependency Status](https://david-dm.org/dreamsparkx/node-starter.svg)](https://david-dm.org/dreamsparkx/node-starter)
+[![Dependency Status](https://david-dm.org/dreamsparkx/node-ts-starter.svg)](https://david-dm.org/dreamsparkx/node-ts-starter)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter?ref=badge_shield)
 
 The main purpose of this repository is to show a working Node.js API Server + front-end project and workflow for writing Node code in TypeScript.
@@ -43,6 +43,6 @@ npm run build
 npm start
 ```
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter?ref=badge_large)
