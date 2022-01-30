@@ -17,7 +17,7 @@ To build and run this app locally you will need a few things:
 Clone the repository
 
 ```
-git clone https://github.com/dreamsparkx/node-starter <project_name>
+git clone https://github.com/dreamsparkx/node-ts-starter <project_name>
 ```
 
 Install dependencies
