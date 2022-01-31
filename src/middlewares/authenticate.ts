@@ -2,6 +2,7 @@ import { Response, Request, NextFunction } from "express";
 import jwt, { VerifyErrors } from "jsonwebtoken";
 import { JWTUser } from "../models/User";
 import { ACCESS_TOKEN_SECRET } from "../util/secrets";
+import { ForbiddenError, NotAcceptableError } from "../util/error";
 
 export const authenticateToken = (
   req: Request,
@@ -16,18 +17,12 @@ export const authenticateToken = (
       ACCESS_TOKEN_SECRET,
       (err: VerifyErrors, user: JWTUser) => {
         if (err) {
-          return res.status(403).json({
-            error: true,
-            errors: [err],
-          });
+          throw new ForbiddenError("Error verifying user", [err]);
         }
         req.user = user;
         return next();
       },
     );
   }
-  return res.status(406).json({
-    error: true,
-    message: "Send corrent headers",
-  });
+  throw new NotAcceptableError("Send corrent headers");
 };

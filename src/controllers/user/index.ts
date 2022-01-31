@@ -1,7 +1,16 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { UserDocument, User } from "../../models/User";
+import {
+  ConflictError,
+  BadRequestError,
+  InternalServerError,
+} from "../../util/error";
 
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const { email, password } = req.body;
   const user = new User({
     email,
@@ -10,10 +19,7 @@ export const createUser = async (req: Request, res: Response) => {
   try {
     const existingUser: UserDocument = await User.findOne({ email });
     if (existingUser) {
-      return res.status(409).json({
-        error: true,
-        message: "User already exists",
-      });
+      throw new ConflictError("User already exists");
     }
     await user.save();
     return res.status(201).json({
@@ -21,14 +27,15 @@ export const createUser = async (req: Request, res: Response) => {
       message: "User Registered",
     });
   } catch (err) {
-    return res.status(400).json({
-      error: true,
-      errors: [err],
-    });
+    return next(err);
   }
 };
 
-export const loginUser = async (req: Request, res: Response) => {
+export const loginUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const { email, password } = req.body;
   const existingUser = await User.findOne({ email });
   if (existingUser) {
@@ -36,29 +43,25 @@ export const loginUser = async (req: Request, res: Response) => {
       password,
       (err: Error, isMatch: boolean) => {
         if (err) {
-          return res.status(400).json({
-            error: true,
-            errors: [err],
-          });
+          return next(
+            new InternalServerError("Invalid email or password", [
+              err,
+            ]),
+          );
         }
         if (isMatch) {
           return res.status(200).json({
             token: existingUser.generateJWTToken(),
           });
         }
-        return res.status(401).json({
-          error: true,
-          message: "Invalid email or password",
-        });
+        return next(new BadRequestError("Invalid email or password"));
       },
     );
   }
-  return res.status(400).json({
-    error: true,
-  });
+  return next(new BadRequestError("Invalid email or password"));
 };
 
-export const getCurrentUser = async (req: Request, res: Response) => {
+export const getCurrentUser = (req: Request, res: Response) => {
   return res.status(200).json({
     user: req.user,
   });
