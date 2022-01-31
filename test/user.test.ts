@@ -23,3 +23,31 @@ describe("GET /api/user", () => {
       .expect(200, done);
   });
 });
+
+describe("POST /api/user", () => {
+  const email = `${(Math.random() + 1)
+    .toString(36)
+    .substring(7)}@gmail.com`;
+  const password = "test";
+  it("should return 400", (done) => {
+    request(app).post("/api/user").expect(400, done);
+  });
+  it("should return 201", (done) => {
+    request(app)
+      .post("/api/user")
+      .send({
+        email,
+        password,
+      })
+      .expect(201, done);
+  });
+  it("should return 409", (done) => {
+    request(app)
+      .post("/api/user")
+      .send({
+        email,
+        password,
+      })
+      .expect(409, done);
+  });
+});
