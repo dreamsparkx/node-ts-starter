@@ -4,6 +4,7 @@ import {
   ConflictError,
   BadRequestError,
   InternalServerError,
+  UnAuthorizedRequestError,
 } from "../../util/error";
 
 export const createUser = async (
@@ -65,4 +66,22 @@ export const getCurrentUser = (req: Request, res: Response) => {
   return res.status(200).json({
     user: req.user,
   });
+};
+
+export const deleteUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const result = await User.deleteOne({ _id: req.user._id });
+    if (result && result.deletedCount === 1) {
+      return res.sendStatus(204);
+    }
+    return next(new UnAuthorizedRequestError("Invalid user"));
+  } catch (err) {
+    return next(
+      new InternalServerError("Internal Server Error", err),
+    );
+  }
 };

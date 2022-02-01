@@ -8,12 +8,14 @@ export class GeneralError extends Error {
     this.errors = errors;
   }
   getCode() {
-    if (this instanceof ForbiddenError) {
+    if (this instanceof BadRequestError) {
+      return 400;
+    } else if (this instanceof UnAuthorizedRequestError) {
+      return 401;
+    } else if (this instanceof ForbiddenError) {
       return 403;
     } else if (this instanceof NotAcceptableError) {
       return 406;
-    } else if (this instanceof BadRequestError) {
-      return 400;
     } else if (this instanceof ConflictError) {
       return 409;
     } else if (this instanceof InternalServerError) {
@@ -47,8 +49,17 @@ export class BadRequestError extends GeneralError {
 }
 
 export class InternalServerError extends GeneralError {
-  constructor(message: string, errors?: unknown[]) {
+  constructor(
+    message: string = "Internal Server Error",
+    errors?: unknown[],
+  ) {
     super(message);
-    logger.error("Internal Server Error", errors);
+    logger.error(message, errors);
+  }
+}
+
+export class UnAuthorizedRequestError extends GeneralError {
+  constructor(message: string) {
+    super(message);
   }
 }
