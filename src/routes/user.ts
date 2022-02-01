@@ -32,7 +32,7 @@ const userRouter = express.Router();
  *      - bearerAuth: []
  *    responses:
  *      403:
- *        description: Bad Request
+ *        description: Forbidden Request
  *        content:
  *          application/json:
  *            schema:
@@ -89,6 +89,32 @@ const userRouter = express.Router();
  *          application/json:
  *            schema:
  *              $ref: '#/components/schemas/GenericResult'
+ *  delete:
+ *    summary: Delete User
+ *    description: Delete User
+ *    security:
+ *      - bearerAuth: []
+ *    responses:
+ *      401:
+ *        description: Forbidden Request
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/GenericResult'
+ *      403:
+ *        description: Forbidden Request
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/GenericResult'
+ *      406:
+ *        description: Incorrect Headers
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/GenericResult'
+ *      204:
+ *        description: Successfully Deleted User
  */
 userRouter.get(
   "/",
@@ -99,6 +125,12 @@ userRouter.post(
   "/",
   userControllerValidators.createUser,
   userController.createUser,
+);
+userRouter.delete(
+  "/",
+  authenticateMiddleware.authenticateToken,
+  authenticateMiddleware.authenticateUser,
+  userController.deleteUser,
 );
 /**
  * @swagger

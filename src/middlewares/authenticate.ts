@@ -2,7 +2,12 @@ import { Response, Request, NextFunction } from "express";
 import jwt, { VerifyErrors } from "jsonwebtoken";
 import { JWTUser } from "../models/User";
 import { ACCESS_TOKEN_SECRET } from "../util/secrets";
-import { ForbiddenError, NotAcceptableError } from "../util/error";
+import {
+  ForbiddenError,
+  NotAcceptableError,
+  UnAuthorizedRequestError,
+} from "../util/error";
+import { User } from "../models/User";
 
 export const authenticateToken = (
   req: Request,
@@ -25,4 +30,16 @@ export const authenticateToken = (
     );
   }
   throw new NotAcceptableError("Send corrent headers");
+};
+
+export const authenticateUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const existingUser = await User.findOne({ _id: req.user._id });
+  if (existingUser) {
+    return next();
+  }
+  return next(new UnAuthorizedRequestError("Unauthorized User"));
 };

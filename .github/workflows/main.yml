@@ -29,11 +29,12 @@ jobs:
         uses: supercharge/mongodb-github-action@1.7.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
-      - name: npm install, build, and test
+      - name: npm install, build, test and doc
         run: |
           npm ci
           npm run build --if-present
           npm run test
+          npm run doc
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@1.1.3
         with:
