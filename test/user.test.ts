@@ -24,11 +24,12 @@ describe("GET /api/user", () => {
   });
 });
 
-describe("POST /api/user", () => {
+describe("POST DELETE /api/user and login user GET /api/user/login", () => {
   const email = `${(Math.random() + 1)
     .toString(36)
     .substring(7)}@gmail.com`;
   const password = "test";
+  let token = "";
   it("should return 400", (done) => {
     request(app).post("/api/user").expect(400, done);
   });
@@ -49,5 +50,24 @@ describe("POST /api/user", () => {
         password,
       })
       .expect(409, done);
+  });
+  it("should return 200 for user login", (done) => {
+    request(app)
+      .post("/api/user/login")
+      .send({
+        email,
+        password,
+      })
+      .expect((res) => {
+        expect(res.body.token).toBeDefined();
+        token = res.body.token;
+      })
+      .expect(200, done);
+  });
+  it("should delete user and return 204", (done) => {
+    request(app)
+      .delete("/api/user")
+      .set("Authorization", `Bearer ${token}`)
+      .expect(204, done);
   });
 });
