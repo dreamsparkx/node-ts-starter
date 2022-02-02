@@ -7,6 +7,13 @@ import {
   UnAuthorizedRequestError,
 } from "../../util/error";
 
+/**
+ * Returns either an error or returns success if user is registered
+ * @param req - The request object
+ * @param res - The response object
+ * @param next - the next function
+ * @returns either an error or returns success if user is registered
+ */
 export const createUser = async (
   req: Request,
   res: Response,

@@ -7,6 +7,10 @@ export class GeneralError extends Error {
     this.message = message;
     this.errors = errors;
   }
+  /**
+   * Returns status code of the type of error initialized
+   * @returns status code of the type of error initialized
+   */
   getCode() {
     if (this instanceof BadRequestError) {
       return 400;
