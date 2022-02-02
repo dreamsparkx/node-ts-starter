@@ -20,7 +20,7 @@
     "watch-test": "npm run test -- --watchAll",
     "watch-ts": "tsc -w",
     "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "doc": "ts-node tools/typedoc.ts",
+    "doc": "typedoc --out docs --entryPointStrategy expand ./src",
     "doc:serve": "serve docs",
     "coverage:serve": "serve coverage/lcov-report",
     "prepare": "husky install",

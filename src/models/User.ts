@@ -8,13 +8,17 @@ export type UserDocument = mongoose.Document & {
   comparePassword: comparePasswordFunction;
   generateJWTToken: generateJWTTokenFunction;
 };
-
-type comparePasswordFunction = (
+/**
+ *
+ * @param userPassword - the password that user inputs
+ * @param cb - callback function that results error if there is one or returns isMatch
+ */
+export type comparePasswordFunction = (
   userPassword: string,
   cb: (err: Error, isMatch: boolean) => void,
 ) => void;
 
-type generateJWTTokenFunction = () => string;
+export type generateJWTTokenFunction = () => string;
 
 const userSchema = new mongoose.Schema<UserDocument>(
   {
