@@ -3,6 +3,7 @@
 [![Dependency Status](https://david-dm.org/dreamsparkx/node-ts-starter.svg)](https://david-dm.org/dreamsparkx/node-ts-starter)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdreamsparkx%2Fnode-ts-starter?ref=badge_shield)
 [![Coverage Status](https://coveralls.io/repos/github/dreamsparkx/node-ts-starter/badge.svg?branch=master)](https://coveralls.io/github/dreamsparkx/node-ts-starter?branch=master)
+![main.yml workflow](https://github.com/dreamsparkx/node-ts-starter/actions/workflows/main.yml/badge.svg)
 
 The main purpose of this repository is to show a working Node.js API Server + front-end project and workflow for writing Node code in TypeScript.
 
