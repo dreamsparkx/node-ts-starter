@@ -12,6 +12,7 @@ import { SESSION_SECRET, MONGODB_URI, PORT } from "./util/secrets";
 import logger from "./util/logger";
 import routes from "./routes";
 import { handleErrors } from "./middlewares/error";
+import expressWinston from "./middlewares/winston";
 
 const app = express();
 const mongoUrl = MONGODB_URI;
@@ -62,6 +63,7 @@ app.use(
     maxAge: 31557600000,
   }),
 ); // 1 year
+app.use(expressWinston);
 app.use(routes);
 app.use(handleErrors);
 export default app;
