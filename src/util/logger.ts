@@ -1,6 +1,6 @@
 import winston, { LoggerOptions } from "winston";
 
-const options: LoggerOptions = {
+export const options: LoggerOptions = {
   transports: [
     new winston.transports.Console({
       level:
