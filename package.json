@@ -48,7 +48,7 @@
     "@types/express-validator": "3.0.0",
     "@types/express-winston": "4.0.0",
     "@types/jest": "27.4.1",
-    "@types/jquery": "3.5.13",
+    "@types/jquery": "3.5.14",
     "@types/jsonwebtoken": "8.5.8",
     "@types/lusca": "1.7.1",
     "@types/mongoose": "5.11.97",
