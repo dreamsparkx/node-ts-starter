@@ -6,7 +6,7 @@ module.exports = {
   },
   moduleFileExtensions: ["ts", "js"],
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(ts|tsx)$": "ts-jest/legacy",
   },
   testMatch: ["**/test/**/*.test.(ts|js)"],
   testEnvironment: "node",
