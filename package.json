@@ -31,7 +31,7 @@
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
     "@commitlint/config-conventional": "16.2.1",
-    "@types/async": "3.2.12",
+    "@types/async": "3.2.13",
     "@types/bcrypt": "5.0.0",
     "@types/body-parser": "1.19.2",
     "@types/chai": "4.3.1",
