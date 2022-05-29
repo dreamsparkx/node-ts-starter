@@ -24,7 +24,8 @@
     "doc:serve": "serve docs",
     "coverage:serve": "serve coverage/lcov-report",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "postman": "node dist/util/postman.js"
   },
   "author": "Gaurav Bharti",
   "license": "MIT",
@@ -96,6 +97,7 @@
     "jsonwebtoken": "^8.5.1",
     "lusca": "^1.7.0",
     "mongoose": "^6.1.5",
+    "openapi-to-postmanv2": "^3.2.0",
     "pug": "^3.0.2",
     "shelljs": "^0.8.5",
     "swagger-jsdoc": "^6.1.0",
