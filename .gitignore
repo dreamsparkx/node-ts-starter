@@ -40,3 +40,5 @@ docs/**/*
 
 # ignore yarn.lock
 yarn.lock
+
+postman_collection.json
