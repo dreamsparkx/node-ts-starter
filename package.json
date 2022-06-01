@@ -48,7 +48,7 @@
     "@types/express-session": "1.17.4",
     "@types/express-validator": "3.0.0",
     "@types/express-winston": "4.0.0",
-    "@types/jest": "27.5.1",
+    "@types/jest": "27.5.2",
     "@types/jquery": "3.5.14",
     "@types/jsonwebtoken": "8.5.8",
     "@types/lusca": "1.7.1",
