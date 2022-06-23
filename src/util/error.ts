@@ -3,8 +3,7 @@ import logger from "./logger";
 export class GeneralError extends Error {
   errors?: unknown[];
   constructor(message: string, errors?: unknown[]) {
-    super();
-    this.message = message;
+    super(message);
     this.errors = errors;
   }
   /**
