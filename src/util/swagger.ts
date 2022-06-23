@@ -31,6 +31,16 @@ const swaggerDefinition: SwaggerDefinition = {
       },
     },
   },
+  "x-tagGroups": [
+    {
+      name: "User Management",
+      tags: ["user"],
+    },
+    {
+      name: "Models",
+      tags: ["jwt_user_model", "generic_result"],
+    },
+  ],
   securityDefinitions: {
     bearerAuth: {
       type: "apiKey",

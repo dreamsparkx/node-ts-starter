@@ -7,6 +7,15 @@ const userRouter = express.Router();
 
 /**
  * @swagger
+ * tags:
+ *  - name: user
+ *    description: all the user's apis
+ *  - name: jwt_user_model
+ *    x-displayName: JWT User
+ *    description: <SchemaDefinition schemaRef="#/components/schemas/JWTUser" />
+ *  - name: generic_result
+ *    x-displayName: Generic Result
+ *    description: <SchemaDefinition schemaRef="#/components/schemas/GenericResult" />
  * components:
  *  schemas:
  *      JWTUser:
@@ -24,10 +33,18 @@ const userRouter = express.Router();
  *              exp:
  *                type: integer
  *                example: 1643212946
+ *      UserLoginResult:
+ *          type: object
+ *          properties:
+ *              token:
+ *                  type: string
+ *                  example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWYxNWQ5NmQ3MjA0ZWQ2NDM3NDIwOGEiLCJlbWFpbCI6ImFzZEBhc2QuY29tIiwiaWF0IjoxNjQzMjExODc1LCJleHAiOjE2NDMyMTM2NzV9.Faw6pvYYdf_eP3SLjcT3O8FesI35Celpj8IVsTXyQCE
  * /api/user:
  *  get:
  *    summary: Get Current User Details
  *    description: Get Current User Details
+ *    tags:
+ *      - user
  *    security:
  *      - bearerAuth: []
  *    responses:
@@ -51,12 +68,12 @@ const userRouter = express.Router();
  *              type: object
  *              properties:
  *                user:
- *                  type: object
- *                  schema:
- *                    $ref: '#/components/schemas/JWTUser'
+ *                  $ref: '#/components/schemas/JWTUser'
  *  post:
  *    summary: Create User
  *    description: Create User
+ *    tags:
+ *      - user
  *    security:
  *      - bearerAuth: []
  *    requestBody:
@@ -92,6 +109,8 @@ const userRouter = express.Router();
  *  delete:
  *    summary: Delete User
  *    description: Delete User
+ *    tags:
+ *      - user
  *    security:
  *      - bearerAuth: []
  *    responses:
@@ -134,18 +153,12 @@ userRouter.delete(
 );
 /**
  * @swagger
- * components:
- *  schemas:
- *      UserLoginResult:
- *          type: object
- *          properties:
- *              token:
- *                  type: string
- *                  example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWYxNWQ5NmQ3MjA0ZWQ2NDM3NDIwOGEiLCJlbWFpbCI6ImFzZEBhc2QuY29tIiwiaWF0IjoxNjQzMjExODc1LCJleHAiOjE2NDMyMTM2NzV9.Faw6pvYYdf_eP3SLjcT3O8FesI35Celpj8IVsTXyQCE
  * /api/user/login:
  *  post:
  *    summary: Login User
  *    description: Login User
+ *    tags:
+ *      - user
  *    requestBody:
  *      required: true
  *      content:
