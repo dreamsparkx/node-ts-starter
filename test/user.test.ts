@@ -64,6 +64,33 @@ describe("POST DELETE /api/user and login user GET /api/user/login", () => {
       })
       .expect(200, done);
   });
+  it("should return 400 for user login failure (wrong password)", (done) => {
+    request(app)
+      .post("/api/user/login")
+      .send({
+        email,
+        password: "wrong_password",
+      })
+      .expect(400, done);
+  });
+  it("should return 400 for user login failure (wrong email)", (done) => {
+    request(app)
+      .post("/api/user/login")
+      .send({
+        email: "wrong_email@email.com",
+        password: "wrong_password",
+      })
+      .expect(400, done);
+  });
+  it("should return 400 for user login failure (bad email type)", (done) => {
+    request(app)
+      .post("/api/user/login")
+      .send({
+        email: "wrong_email",
+        password: "wrong_password",
+      })
+      .expect(400, done);
+  });
   it("should delete user and return 204", (done) => {
     request(app)
       .delete("/api/user")
