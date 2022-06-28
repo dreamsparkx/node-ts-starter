@@ -32,7 +32,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
-    "@types/async": "3.2.13",
+    "@types/async": "3.2.14",
     "@types/bcrypt": "5.0.0",
     "@types/body-parser": "1.19.2",
     "@types/chai": "4.3.1",
