@@ -75,6 +75,32 @@ export const getCurrentUser = (req: Request, res: Response) => {
   });
 };
 
+export const changeUserDetails = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const { email, password } = req.body;
+  const result = await User.findOne({ _id: req.user._id });
+  if (email) {
+    result.email = email;
+  }
+  if (password) {
+    result.password = password;
+  }
+  try {
+    await result.save();
+  } catch (ex) {
+    return next(
+      new BadRequestError("Could not save user details", ex),
+    );
+  }
+  return res.status(200).json({
+    error: false,
+    message: "User Updated",
+  });
+};
+
 export const deleteUser = async (
   req: Request,
   res: Response,
