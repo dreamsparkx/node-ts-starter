@@ -2,6 +2,10 @@ import request from "supertest";
 import app from "../src/app";
 import { generateJWT } from "../src/util/jwt";
 
+function generateRandomEmail() {
+  return `${(Math.random() + 1).toString(36).substring(7)}@gmail.com`;
+}
+
 describe("GET /api/user", () => {
   it("should return 406", (done) => {
     request(app).get("/api/user").expect(406, done);
@@ -24,11 +28,9 @@ describe("GET /api/user", () => {
   });
 });
 
-describe("POST DELETE /api/user and login user GET /api/user/login", () => {
-  const email = `${(Math.random() + 1)
-    .toString(36)
-    .substring(7)}@gmail.com`;
-  const password = "test";
+describe("POST PUT DELETE /api/user and login user GET /api/user/login", () => {
+  let email = generateRandomEmail();
+  let password = "test";
   let token = "";
   it("should return 400", (done) => {
     request(app).post("/api/user").expect(400, done);
@@ -88,10 +90,28 @@ describe("POST DELETE /api/user and login user GET /api/user/login", () => {
       })
       .expect(400, done);
   });
-  it("should delete user and return 204", (done) => {
+  it("should update user and return 200", (done) => {
+    email = generateRandomEmail();
+    password = "asdbnkajsbdjkqbwelkansdad";
     request(app)
-      .delete("/api/user")
+      .put("/api/user")
       .set("Authorization", `Bearer ${token}`)
-      .expect(204, done);
+      .send({
+        email,
+        password,
+      })
+      .expect(200, done);
   });
+  it("should delete user and return 204", async () => {
+    await new Promise((r) => setTimeout(r, 2000));
+    const result = await request(app).post("/api/user/login").send({
+      email,
+      password,
+    });
+    token = result.body.token;
+    const endRes = await request(app)
+      .delete("/api/user")
+      .set("Authorization", `Bearer ${token}`);
+    expect(endRes.statusCode).toBe(204);
+  }, 10000);
 });

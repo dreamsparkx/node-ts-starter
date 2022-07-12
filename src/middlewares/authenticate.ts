@@ -40,10 +40,6 @@ export const authenticateUser = async (
   if (existingUser) {
     const docUpdatedAt = existingUser.updatedAt.getTime();
     const jwtIssuedAt = Number(`${req.user.iat}000`);
-    console.log({
-      docUpdatedAt,
-      jwtIssuedAt,
-    });
     if (docUpdatedAt > jwtIssuedAt) {
       return next(
         new UnAuthorizedRequestError(
