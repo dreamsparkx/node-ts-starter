@@ -7,6 +7,8 @@ export type UserDocument = mongoose.Document & {
   password: string;
   comparePassword: comparePasswordFunction;
   generateJWTToken: generateJWTTokenFunction;
+  createdAt: Date;
+  updatedAt: Date;
 };
 /**
  *

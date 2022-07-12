@@ -106,6 +106,39 @@ const userRouter = express.Router();
  *          application/json:
  *            schema:
  *              $ref: '#/components/schemas/GenericResult'
+ *  put:
+ *    summary: Update User Details
+ *    description: Update User Details
+ *    tags:
+ *      - user
+ *    security:
+ *      - bearerAuth: []
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              email:
+ *                type: string
+ *                required: false
+ *              password:
+ *                type: string
+ *                required: false
+ *    responses:
+ *      400:
+ *        description: Validation Error or bad Request.
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/GenericResult'
+ *      200:
+ *        description: User Updated
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/GenericResult'
  *  delete:
  *    summary: Delete User
  *    description: Delete User
@@ -138,12 +171,20 @@ const userRouter = express.Router();
 userRouter.get(
   "/",
   authenticateMiddleware.authenticateToken,
+  authenticateMiddleware.authenticateUser,
   userController.getCurrentUser,
 );
 userRouter.post(
   "/",
   userControllerValidators.createUser,
   userController.createUser,
+);
+userRouter.put(
+  "/",
+  userControllerValidators.updateUser,
+  authenticateMiddleware.authenticateToken,
+  authenticateMiddleware.authenticateUser,
+  userController.changeUserDetails,
 );
 userRouter.delete(
   "/",

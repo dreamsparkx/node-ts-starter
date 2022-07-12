@@ -12,7 +12,7 @@ describe("GET /api/user", () => {
       .set("Authorization", "Bearer sd")
       .expect(403, done);
   });
-  it("should return 200", (done) => {
+  it("should return 401 as token is generated but not in DB", (done) => {
     const tempToken = generateJWT({
       _id: "61f15d96d7204ed64374208a",
       email: "asd@asd.com",
@@ -20,7 +20,7 @@ describe("GET /api/user", () => {
     request(app)
       .get("/api/user")
       .set("Authorization", `Bearer ${tempToken}`)
-      .expect(200, done);
+      .expect(401, done);
   });
 });
 
@@ -51,19 +51,16 @@ describe("POST DELETE /api/user and login user GET /api/user/login", () => {
       })
       .expect(409, done);
   });
-  it("should return 200 for user login", (done) => {
-    request(app)
-      .post("/api/user/login")
-      .send({
-        email,
-        password,
-      })
-      .expect((res) => {
-        expect(res.body.token).toBeDefined();
-        token = res.body.token;
-      })
-      .expect(200, done);
-  });
+  it("should return 200 for user login", async () => {
+    await new Promise((r) => setTimeout(r, 2000));
+    const result = await request(app).post("/api/user/login").send({
+      email,
+      password,
+    });
+    expect(result.body.token).toBeDefined();
+    token = result.body.token;
+    expect(result.statusCode).toBe(200);
+  }, 10000);
   it("should return 400 for user login failure (wrong password)", (done) => {
     request(app)
       .post("/api/user/login")

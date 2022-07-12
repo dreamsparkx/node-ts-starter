@@ -1,13 +1,12 @@
 import { Response, Request, NextFunction } from "express";
 import jwt, { VerifyErrors } from "jsonwebtoken";
-import { JWTUser } from "../models/User";
+import { JWTUser, User } from "../models/User";
 import { ACCESS_TOKEN_SECRET } from "../util/secrets";
 import {
   ForbiddenError,
   NotAcceptableError,
   UnAuthorizedRequestError,
 } from "../util/error";
-import { User } from "../models/User";
 
 export const authenticateToken = (
   req: Request,
@@ -39,6 +38,19 @@ export const authenticateUser = async (
 ) => {
   const existingUser = await User.findOne({ _id: req.user._id });
   if (existingUser) {
+    const docUpdatedAt = existingUser.updatedAt.getTime();
+    const jwtIssuedAt = Number(`${req.user.iat}000`);
+    console.log({
+      docUpdatedAt,
+      jwtIssuedAt,
+    });
+    if (docUpdatedAt > jwtIssuedAt) {
+      return next(
+        new UnAuthorizedRequestError(
+          "Token expired. Please login again.",
+        ),
+      );
+    }
     return next();
   }
   return next(new UnAuthorizedRequestError("Unauthorized User"));

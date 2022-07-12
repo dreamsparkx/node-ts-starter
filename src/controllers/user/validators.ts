@@ -1,6 +1,11 @@
-import { check, validationResult } from "express-validator";
+import Joi from "joi";
 import { Response, Request, NextFunction } from "express";
 import { BadRequestError } from "../../util/error";
+
+const UserJoiSchema = Joi.object().keys({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(1).required(),
+});
 
 export const createUser = async (
   req: Request,
@@ -8,19 +13,39 @@ export const createUser = async (
   next: NextFunction,
 ) => {
   try {
-    await check("email", "email is not valid")
-      .isEmail()
-      .normalizeEmail({ gmail_remove_dots: false })
-      .run(req);
-    await check("password", "password cannot be blank")
-      .isLength({ min: 1 })
-      .run(req);
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      throw new BadRequestError("Validation Errors", errors.array());
+    const { error } = UserJoiSchema.validate(req.body);
+    if (error) {
+      const { details } = error;
+      throw new BadRequestError("Validation Errors", details);
     }
   } catch (err) {
     return next(err);
+  }
+  return next();
+};
+
+export const updateUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const { error } = Joi.object()
+      .keys({
+        email: Joi.string().email().optional(),
+        password: Joi.string().when("email", {
+          is: Joi.exist(),
+          then: Joi.optional(),
+          otherwise: Joi.required(),
+        }),
+      })
+      .validate(req.body);
+    if (error) {
+      const { details } = error;
+      throw new BadRequestError("Validation Errors", details);
+    }
+  } catch (ex) {
+    return next(ex);
   }
   return next();
 };
@@ -31,16 +56,10 @@ export const loginUser = async (
   next: NextFunction,
 ) => {
   try {
-    await check("email", "email is not valid")
-      .isEmail()
-      .normalizeEmail({ gmail_remove_dots: false })
-      .run(req);
-    await check("password", "password cannot be blank")
-      .isLength({ min: 1 })
-      .run(req);
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      throw new BadRequestError("Validation Errors", errors.array());
+    const { error } = UserJoiSchema.validate(req.body);
+    if (error) {
+      const { details } = error;
+      throw new BadRequestError("Validation Errors", details);
     }
   } catch (err) {
     return next(err);
