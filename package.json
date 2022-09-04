@@ -89,7 +89,7 @@
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
     "lusca": "^1.7.0",
-    "mongoose": "^6.1.5",
+    "mongoose": "^6.4.6",
     "openapi-to-postmanv2": "^4.0.0",
     "pug": "^3.0.2",
     "shelljs": "^0.8.5",
