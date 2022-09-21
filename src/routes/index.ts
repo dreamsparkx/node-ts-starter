@@ -1,6 +1,6 @@
 import express from "express";
 import * as homeController from "../controllers/home";
-import swaggerRoutes from "./swagger";
+import docsRoutes from "./docs";
 import apiRouter from "./api";
 
 const rootRouter = express.Router();
@@ -22,7 +22,7 @@ const rootRouter = express.Router();
  *                  type: string
  */
 rootRouter.get("/", homeController.index);
-rootRouter.use(swaggerRoutes);
+rootRouter.use(docsRoutes);
 rootRouter.use("/api", apiRouter);
 
 export default rootRouter;
