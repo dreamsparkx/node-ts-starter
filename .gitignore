@@ -42,3 +42,5 @@ docs/**/*
 yarn.lock
 
 postman_collection.json
+
+ssl
