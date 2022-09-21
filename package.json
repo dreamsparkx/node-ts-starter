@@ -25,7 +25,8 @@
     "coverage:serve": "serve coverage/lcov-report",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "postman": "node dist/util/postman.js"
+    "postman": "node dist/util/postman.js",
+    "createSSL": "./scripts/create-ssl.sh"
   },
   "author": "Gaurav Bharti",
   "license": "MIT",

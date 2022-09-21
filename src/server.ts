@@ -15,8 +15,8 @@ if (process.env.NODE_ENV !== "production") {
  */
 if (
   process.env.NODE_ENV !== "production" &&
-  fs.readFileSync("ssl/server.key") &&
-  fs.readFileSync("ssl/server.cert")
+  fs.readFileSync("ssl/server.key") && // https://www.thepolyglotdeveloper.com/2018/11/create-self-signed-certificate-nodejs-macos/
+  fs.readFileSync("ssl/server.cert") // https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 ) {
   https
     .createServer(
