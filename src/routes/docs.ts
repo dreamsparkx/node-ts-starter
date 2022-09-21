@@ -22,7 +22,7 @@ if (ENVIRONMENT !== "production") {
   docsRoutes.get(
     "/postman.json",
     async (req: Request, res: Response) => {
-      getPostmanJSON()
+      getPostmanJSON(specs)
         .then((json) => {
           res.setHeader("Content-Type", "application/json");
           res.send(json);

@@ -4,10 +4,10 @@ import path from "path";
 import Converter from "openapi-to-postmanv2";
 import { specs } from "./swagger";
 
-function getPostmanJSON() {
+function getPostmanJSON(swaggerSpec: object) {
   return new Promise((resolve, reject) => {
     Converter.convert(
-      { type: "json", data: specs },
+      { type: "json", data: swaggerSpec },
       {},
       (
         err: Error,
@@ -31,7 +31,7 @@ function getPostmanJSON() {
 }
 
 async function run() {
-  const data = await getPostmanJSON();
+  const data = await getPostmanJSON(specs);
   fs.writeFile(
     path.resolve(__dirname + "/../..") + "/postman_collection.json",
     JSON.stringify(data),
