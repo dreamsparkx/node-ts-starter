@@ -1,5 +1,6 @@
 import request from "supertest";
-import app from "../src/app";
+import app from "../../src/app";
+import { run as postmanScriptRun } from "../../src/util/postman";
 
 describe("GET /api-docs", () => {
   it("should return 301 Moved Permanently", (done) => {
@@ -17,6 +18,24 @@ describe("GET /swagger.json", () => {
         expect(contentType).toBe("application/json; charset=utf-8");
       })
       .end(done);
+  });
+});
+
+describe("GET /postman.json and check postman script", () => {
+  it("should return 200 OK", (done) => {
+    request(app)
+      .get("/postman.json")
+      .expect(200)
+      .expect(function (res) {
+        const contentType = res.header["content-type"];
+        expect(contentType).toBe("application/json; charset=utf-8");
+      })
+      .end(done);
+  });
+  it("should check postmanScript", () => {
+    expect(async () => {
+      await postmanScriptRun();
+    }).not.toThrowError();
   });
 });
 

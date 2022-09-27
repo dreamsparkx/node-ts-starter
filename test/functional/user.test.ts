@@ -1,6 +1,6 @@
 import request from "supertest";
-import app from "../src/app";
-import { generateJWT } from "../src/util/jwt";
+import app from "../../src/app";
+import { generateJWT } from "../../src/util/jwt";
 
 function generateRandomEmail() {
   return `${(Math.random() + 1).toString(36).substring(7)}@gmail.com`;
