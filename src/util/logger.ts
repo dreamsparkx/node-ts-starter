@@ -1,4 +1,10 @@
-import winston, { LoggerOptions } from "winston";
+import winston, { LoggerOptions, format } from "winston";
+import { TransformableInfo } from "logform";
+const { combine, colorize, printf, timestamp, label } = format;
+
+const myFormat = printf((info: TransformableInfo) => {
+  return `${info.timestamp} ${info.label} ${info.level}: ${info.message}`;
+});
 
 export const options: LoggerOptions = {
   transports: [
@@ -11,6 +17,12 @@ export const options: LoggerOptions = {
       level: "debug",
     }),
   ],
+  format: combine(
+    colorize(),
+    label({ label: "[app-server]" }),
+    timestamp(),
+    myFormat,
+  ),
 };
 
 const logger = winston.createLogger(options);
