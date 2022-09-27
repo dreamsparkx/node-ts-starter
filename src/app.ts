@@ -67,3 +67,11 @@ app.use(expressWinston);
 app.use(routes);
 app.use(handleErrors);
 export default app;
+
+// https://gist.github.com/jimothyGator/5436538
+// https://gist.github.com/netpoetica/5879685
+// https://smali-kazmi.medium.com/setup-nginx-node-js-on-mac-os-x-b31eda9f7d5d
+// https://www.sitepoint.com/configuring-nginx-ssl-node-js/
+// https://adamtheautomator.com/nginx-on-mac/
+// https://developer.redis.com/create/docker/nodejs-nginx-redis/
+// https://codeburst.io/building-a-simple-single-sign-on-sso-server-and-solution-from-scratch-in-node-js-ea6ee5fdf340
