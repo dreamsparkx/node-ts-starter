@@ -88,7 +88,7 @@
     "express-session": "^1.17.2",
     "express-winston": "^4.2.0",
     "joi": "^17.6.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lusca": "^1.7.0",
     "mongoose": "^6.4.6",
     "openapi-to-postmanv2": "^4.0.0",
