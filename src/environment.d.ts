@@ -5,5 +5,6 @@ declare namespace NodeJS {
         SESSION_SECRET: string;
         MONGODB_URI_LOCAL: string;
         MONGODB_URI: string;
+        a: string;
     }
 }
