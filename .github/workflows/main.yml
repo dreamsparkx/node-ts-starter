@@ -37,7 +37,7 @@ jobs:
           npm run doc
           npm run postman
       - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@1.1.3
+        uses: coverallsapp/github-action@v1.2.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
