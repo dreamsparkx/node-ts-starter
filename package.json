@@ -45,7 +45,7 @@
     "@types/express-session": "1.17.7",
     "@types/jest": "29.5.1",
     "@types/jquery": "3.5.16",
-    "@types/jsonwebtoken": "9.0.1",
+    "@types/jsonwebtoken": "9.0.2",
     "@types/lusca": "1.7.1",
     "@types/node": "18.16.0",
     "@types/nodemon": "1.19.2",
