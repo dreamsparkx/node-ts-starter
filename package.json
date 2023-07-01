@@ -68,7 +68,7 @@
     "sass": "1.63.6",
     "serve": "14.2.0",
     "supertest": "6.3.3",
-    "ts-jest": "29.1.0",
+    "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "typedoc": "0.24.8",
     "typescript": "5.1.3"
