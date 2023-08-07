@@ -26,7 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: MongoDB in GitHub Actions
-        uses: supercharge/mongodb-github-action@v1.9.0
+        uses: supercharge/mongodb-github-action@v1.10.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - name: npm install, build, test and doc
