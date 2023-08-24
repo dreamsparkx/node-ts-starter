@@ -34,7 +34,7 @@ async function run() {
   const data = await getPostmanJSON(specs);
   fs.writeFile(
     path.resolve(__dirname + "/../..") + "/postman_collection.json",
-    JSON.stringify(data),
+    JSON.stringify(data, null, 2),
     (err) => {
       if (err) {
         throw err;

@@ -213,7 +213,7 @@ userRouter.delete(
  *                type: string
  *    responses:
  *      400:
- *        description: Validation Error.
+ *        description: Validation Error
  *        content:
  *          application/json:
  *            schema:
