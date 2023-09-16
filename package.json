@@ -44,7 +44,7 @@
     "@types/express-flash": "0.0.2",
     "@types/express-session": "1.17.7",
     "@types/jest": "29.5.5",
-    "@types/jquery": "3.5.18",
+    "@types/jquery": "3.5.19",
     "@types/jsonwebtoken": "9.0.3",
     "@types/lusca": "1.7.2",
     "@types/node": "18.17.17",
