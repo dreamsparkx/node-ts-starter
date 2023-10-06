@@ -65,7 +65,7 @@
     "lint-staged": "^14.0.1",
     "nodemon": "3.0.1",
     "prettier": "^3.0.0",
-    "sass": "1.68.0",
+    "sass": "1.69.0",
     "serve": "14.2.1",
     "supertest": "6.3.3",
     "ts-jest": "29.1.1",
