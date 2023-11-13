@@ -49,9 +49,6 @@ app.use(
     secret: SESSION_SECRET,
     store: new MongoStore({
       mongoUrl,
-      mongoOptions: {
-        keepAlive: true,
-      },
     }),
   }),
 );
