@@ -31,7 +31,7 @@
   "author": "Gaurav Bharti",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "18.4.0",
+    "@commitlint/cli": "18.4.1",
     "@commitlint/config-conventional": "18.4.0",
     "@types/async": "3.2.23",
     "@types/bcrypt": "5.0.2",
