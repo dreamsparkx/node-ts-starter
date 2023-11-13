@@ -46,7 +46,7 @@
     "@types/jest": "29.5.7",
     "@types/jquery": "3.5.27",
     "@types/jsonwebtoken": "9.0.4",
-    "@types/lusca": "1.7.3",
+    "@types/lusca": "1.7.4",
     "@types/node": "20.8.10",
     "@types/nodemon": "1.19.4",
     "@types/shelljs": "0.8.14",
