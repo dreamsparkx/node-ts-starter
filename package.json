@@ -51,7 +51,7 @@
     "@types/nodemon": "1.19.4",
     "@types/shelljs": "0.8.14",
     "@types/supertest": "2.0.15",
-    "@types/swagger-jsdoc": "6.0.2",
+    "@types/swagger-jsdoc": "6.0.3",
     "@types/swagger-ui-express": "4.1.5",
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
