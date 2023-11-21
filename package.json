@@ -36,7 +36,7 @@
     "@types/async": "3.2.23",
     "@types/bcrypt": "5.0.2",
     "@types/body-parser": "1.19.5",
-    "@types/chai": "4.3.10",
+    "@types/chai": "4.3.11",
     "@types/compression": "1.7.5",
     "@types/cors": "2.8.16",
     "@types/errorhandler": "1.5.3",
