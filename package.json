@@ -67,7 +67,7 @@
     "prettier": "^3.0.0",
     "sass": "1.76.0",
     "serve": "14.2.3",
-    "supertest": "6.3.4",
+    "supertest": "7.0.0",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "typedoc": "0.25.13",
