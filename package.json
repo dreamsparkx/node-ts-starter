@@ -91,7 +91,7 @@
     "lusca": "^1.7.0",
     "mongoose": "^8.0.0",
     "openapi-to-postmanv2": "^4.0.0",
-    "pug": "^3.0.2",
+    "pug": "^3.0.3",
     "shelljs": "^0.8.5",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^5.0.0",
