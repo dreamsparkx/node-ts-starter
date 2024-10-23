@@ -8,7 +8,15 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import flash from "express-flash";
 import lusca from "lusca";
-import { SESSION_SECRET, MONGODB_URI, PORT } from "./util/secrets";
+import swStats from "swagger-stats";
+import { getPostmanJSON } from "./util/postman";
+import { specs as swaggerSpecs } from "./util/swagger";
+import {
+  SESSION_SECRET,
+  MONGODB_URI,
+  PORT,
+  ENVIRONMENT,
+} from "./util/secrets";
 import logger from "./util/logger";
 import routes from "./routes";
 import { handleErrors } from "./middlewares/error";
@@ -63,6 +71,11 @@ app.use(
 app.use(expressWinston);
 app.use(routes);
 app.use(handleErrors);
+if (ENVIRONMENT != "production") {
+  getPostmanJSON(swaggerSpecs).then((swaggerJSON) => {
+    app.use(swStats.getMiddleware({ swaggerSpec: swaggerJSON }));
+  });
+}
 export default app;
 
 // https://gist.github.com/jimothyGator/5436538
