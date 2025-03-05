@@ -9,7 +9,7 @@ export default [
     pluginJs.configs.recommended,
     ...tselint.configs.recommended,
     {
-        ignores: ["dist/*", "docs/**/*", "coverage/*", "**/*.d.ts", "src/public/", "src/types/", "jest.config.js"]
+        ignores: ["dist/*", "docs/**/*", "coverage/*", "**/*.d.ts", "src/public/", "src/types/"]
     },
     eslintConfigPrettier,
 ]
