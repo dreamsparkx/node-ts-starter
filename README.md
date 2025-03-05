@@ -13,6 +13,7 @@ To build and run this app locally you will need a few things:
 
 - Install Node.js
 - Install MongoDB
+- Install pnpm (npm install -g pnpm@latest-10)
 
 # Getting Started
 
@@ -26,7 +27,7 @@ Install dependencies
 
 ```
 cd <project_name>
-npm install
+pnpm install
 ```
 
 Configure and start MongoDB
