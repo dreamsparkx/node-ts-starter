@@ -42,8 +42,8 @@ mongod --dbpath ~/data/db
 Build and run the project
 
 ```
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
 ## License
