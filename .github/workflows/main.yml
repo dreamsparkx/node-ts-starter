@@ -1,7 +1,5 @@
 name: Node CI
-
 on: [push, pull_request]
-
 jobs:
   build-node:
     runs-on: ubuntu-latest
@@ -11,31 +9,26 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+            version: 10
       - name: Use Node.js 20.17.0
         uses: actions/setup-node@v4
         with:
-          node-version: 20.17.0
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v4
-        with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+            node-version: 20.17.0
+            cache: 'pnpm'
       - name: MongoDB in GitHub Actions
         uses: supercharge/mongodb-github-action@1.12.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
-      - name: npm install, build, test and doc
+      - name: pnpm install, build, test and doc
         run: |
-          npm ci
-          npm run build --if-present
-          npm run test
-          npm run doc
-          npm run postman
+          pnpm install
+          pnpm build
+          pnpm test
+          pnpm doc
+          pnpm postman
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.3.6
         with:
