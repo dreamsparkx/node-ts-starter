@@ -13,7 +13,7 @@ export const createUser = async (
   next: NextFunction,
 ) => {
   try {
-    const { error } = UserJoiSchema.validate(req.body);
+    const { error } = UserJoiSchema.validate(req.body || {});
     if (error) {
       const { details } = error;
       throw new BadRequestError("Validation Errors", details);
@@ -39,7 +39,7 @@ export const updateUser = async (
           otherwise: Joi.required(),
         }),
       })
-      .validate(req.body);
+      .validate(req.body || {});
     if (error) {
       const { details } = error;
       throw new BadRequestError("Validation Errors", details);
@@ -56,7 +56,7 @@ export const loginUser = async (
   next: NextFunction,
 ) => {
   try {
-    const { error } = UserJoiSchema.validate(req.body);
+    const { error } = UserJoiSchema.validate(req.body || {});
     if (error) {
       const { details } = error;
       throw new BadRequestError("Validation Errors", details);
