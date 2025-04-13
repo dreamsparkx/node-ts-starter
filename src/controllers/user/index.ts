@@ -34,6 +34,7 @@ export const createUser = async (
       error: false,
       message: "User Registered",
     });
+    return;
   } catch (err) {
     return next(err);
   }
@@ -73,6 +74,7 @@ export const getCurrentUser = (req: Request, res: Response) => {
   res.status(200).json({
     user: req.user,
   });
+  return;
 };
 
 export const changeUserDetails = async (
@@ -99,6 +101,7 @@ export const changeUserDetails = async (
     error: false,
     message: "User Updated",
   });
+  return;
 };
 
 export const deleteUser = async (
@@ -110,6 +113,7 @@ export const deleteUser = async (
     const result = await User.deleteOne({ _id: req.user._id });
     if (result && result.deletedCount === 1) {
       res.sendStatus(204);
+      return;
     }
     return next(new UnAuthorizedRequestError("Invalid user"));
   } catch (err) {
