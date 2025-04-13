@@ -12,7 +12,7 @@ export const authenticateToken = (
   req: Request,
   res: Response,
   next: NextFunction,
-): void | Response => {
+) => {
   const authHeaders = req.headers.authorization;
   const token = authHeaders && authHeaders.split(" ")[1];
   if (token) {

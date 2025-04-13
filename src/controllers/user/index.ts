@@ -30,10 +30,11 @@ export const createUser = async (
       throw new ConflictError("User already exists");
     }
     await user.save();
-    return res.status(201).json({
+    res.status(201).json({
       error: false,
       message: "User Registered",
     });
+    return;
   } catch (err) {
     return next(err);
   }
@@ -70,9 +71,10 @@ export const loginUser = async (
 };
 
 export const getCurrentUser = (req: Request, res: Response) => {
-  return res.status(200).json({
+  res.status(200).json({
     user: req.user,
   });
+  return;
 };
 
 export const changeUserDetails = async (
@@ -95,10 +97,11 @@ export const changeUserDetails = async (
       new BadRequestError("Could not save user details", ex),
     );
   }
-  return res.status(200).json({
+  res.status(200).json({
     error: false,
     message: "User Updated",
   });
+  return;
 };
 
 export const deleteUser = async (
@@ -109,7 +112,8 @@ export const deleteUser = async (
   try {
     const result = await User.deleteOne({ _id: req.user._id });
     if (result && result.deletedCount === 1) {
-      return res.sendStatus(204);
+      res.sendStatus(204);
+      return;
     }
     return next(new UnAuthorizedRequestError("Invalid user"));
   } catch (err) {
