@@ -130,8 +130,8 @@ importers:
         specifier: ^22.0.0
         version: 22.14.1
       '@types/nodemon':
-        specifier: ^1.19.5
-        version: 1.19.6
+        specifier: ^3.0.0
+        version: 3.1.1
       '@types/shelljs':
         specifier: ^0.8.15
         version: 0.8.15
@@ -900,8 +900,9 @@ packages:
   '@types/node@22.14.1':
     resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
 
-  '@types/nodemon@1.19.6':
-    resolution: {integrity: sha512-vjKuaQOLUA5EY2zkUmWG1ipXbKt9Wd+H/0SiIuHVeH4cHtt6509iRUGH9ZR0iqgUrtj3BrP9KqoTuV3ZCbQcYA==}
+  '@types/nodemon@3.1.1':
+    resolution: {integrity: sha512-q29nOOLwcTTPzp6VABHTybbLYdPF5aW6FZARvax8JGhYdQvLtZXX3z2MPP1KkaBDxVsNp7ehl2OSuTbIpsTihg==}
+    deprecated: This is a stub types definition. nodemon provides its own type definitions, so you do not need this installed.
 
   '@types/qs@6.9.7':
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
@@ -4252,9 +4253,9 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/nodemon@1.19.6':
+  '@types/nodemon@3.1.1':
     dependencies:
-      '@types/node': 22.14.1
+      nodemon: 3.1.9
 
   '@types/qs@6.9.7': {}
 
