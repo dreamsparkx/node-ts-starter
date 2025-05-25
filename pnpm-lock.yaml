@@ -100,8 +100,8 @@ importers:
         specifier: ^1.19.5
         version: 1.19.5
       '@types/compression':
-        specifier: 1.7.5
-        version: 1.7.5
+        specifier: 1.8.0
+        version: 1.8.0
       '@types/cors':
         specifier: 2.8.18
         version: 2.8.18
@@ -848,8 +848,8 @@ packages:
   '@types/body-parser@1.19.5':
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
 
-  '@types/compression@1.7.5':
-    resolution: {integrity: sha512-AAQvK5pxMpaT+nDvhHrsBhLSYG5yQdtkaJE1WYieSNY2mVFKAgmU4ks65rkZD5oqnGCFLyQpUr1CqI4DmUMyDg==}
+  '@types/compression@1.8.0':
+    resolution: {integrity: sha512-g4vmPIwbTii9dX1HVioHbOolubEaf4re4vDxuzpKrzz9uI7uarBExi9begX0cXyIB85jXZ5X2A/v8rsHZxSAPw==}
 
   '@types/connect@3.4.35':
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
@@ -4025,9 +4025,10 @@ snapshots:
       '@types/connect': 3.4.35
       '@types/node': 22.15.21
 
-  '@types/compression@1.7.5':
+  '@types/compression@1.8.0':
     dependencies:
       '@types/express': 5.0.2
+      '@types/node': 22.15.21
 
   '@types/connect@3.4.35':
     dependencies:
