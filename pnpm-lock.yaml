@@ -98,7 +98,7 @@ importers:
         version: 5.0.2
       '@types/body-parser':
         specifier: ^1.19.5
-        version: 1.19.5
+        version: 1.19.6
       '@types/compression':
         specifier: 1.8.0
         version: 1.8.0
@@ -839,8 +839,8 @@ packages:
   '@types/bcrypt@5.0.2':
     resolution: {integrity: sha512-6atioO8Y75fNcbmj0G7UjI9lXN2pQ/IGJ2FWT4a/btd0Lk9lQalHLKhkgKVZ3r+spnmWUKfbMi1GEe9wyHQfNQ==}
 
-  '@types/body-parser@1.19.5':
-    resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
+  '@types/body-parser@1.19.6':
+    resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
 
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
@@ -848,8 +848,8 @@ packages:
   '@types/compression@1.8.0':
     resolution: {integrity: sha512-g4vmPIwbTii9dX1HVioHbOolubEaf4re4vDxuzpKrzz9uI7uarBExi9begX0cXyIB85jXZ5X2A/v8rsHZxSAPw==}
 
-  '@types/connect@3.4.35':
-    resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
+  '@types/connect@3.4.38':
+    resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
 
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
@@ -4040,9 +4040,9 @@ snapshots:
     dependencies:
       '@types/node': 22.15.21
 
-  '@types/body-parser@1.19.5':
+  '@types/body-parser@1.19.6':
     dependencies:
-      '@types/connect': 3.4.35
+      '@types/connect': 3.4.38
       '@types/node': 22.15.21
 
   '@types/chai@5.2.2':
@@ -4054,7 +4054,7 @@ snapshots:
       '@types/express': 5.0.3
       '@types/node': 22.15.21
 
-  '@types/connect@3.4.35':
+  '@types/connect@3.4.38':
     dependencies:
       '@types/node': 22.15.21
 
@@ -4095,7 +4095,7 @@ snapshots:
 
   '@types/express@5.0.3':
     dependencies:
-      '@types/body-parser': 1.19.5
+      '@types/body-parser': 1.19.6
       '@types/express-serve-static-core': 5.0.6
       '@types/serve-static': 1.15.8
 
