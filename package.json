@@ -42,7 +42,7 @@
     "@types/bcrypt": "5.0.2",
     "@types/body-parser": "^1.19.5",
     "@types/compression": "1.8.0",
-    "@types/cors": "2.8.18",
+    "@types/cors": "2.8.19",
     "@types/errorhandler": "1.5.3",
     "@types/express": "^5.0.1",
     "@types/express-flash": "0.0.5",
