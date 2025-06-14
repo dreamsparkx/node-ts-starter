@@ -46,7 +46,7 @@
     "@types/errorhandler": "1.5.3",
     "@types/express": "^5.0.1",
     "@types/express-flash": "0.0.5",
-    "@types/express-session": "1.18.1",
+    "@types/express-session": "1.18.2",
     "@types/jquery": "^3.5.32",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/lusca": "1.7.5",
