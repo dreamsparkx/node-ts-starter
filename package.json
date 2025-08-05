@@ -89,7 +89,7 @@
     "express-session": "^1.18.1",
     "express-winston": "^4.2.0",
     "globals": "^16.0.0",
-    "joi": "^17.6.0",
+    "joi": "^18.0.0",
     "jsonwebtoken": "^9.0.2",
     "logform": "^2.7.0",
     "lusca": "^1.7.0",
