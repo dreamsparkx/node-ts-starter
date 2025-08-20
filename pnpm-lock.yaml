@@ -49,7 +49,7 @@ importers:
         version: 16.3.0
       joi:
         specifier: ^18.0.0
-        version: 18.0.0
+        version: 18.0.1
       jsonwebtoken:
         specifier: ^9.0.2
         version: 9.0.2
@@ -2162,8 +2162,8 @@ packages:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
 
-  joi@18.0.0:
-    resolution: {integrity: sha512-fpbpXN/TD04Xz1/cCXzUR3ghDkhyiHjbzTILx3wNyKXIzQJ55uYAkUGWwhX72uHge/6MdFA/kp1ZUh35DlYmaA==}
+  joi@18.0.1:
+    resolution: {integrity: sha512-IiQpRyypSnLisQf3PwuN2eIHAsAIGZIrLZkd4zdvIar2bDyhM91ubRjy8a3eYablXsh9BeI/c7dmPYHca5qtoA==}
     engines: {node: '>= 20'}
 
   js-stringify@1.0.2:
@@ -5537,7 +5537,7 @@ snapshots:
 
   jiti@2.4.2: {}
 
-  joi@18.0.0:
+  joi@18.0.1:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
