@@ -119,7 +119,7 @@ importers:
         version: 1.18.2
       '@types/jquery':
         specifier: ^3.5.32
-        version: 3.5.32
+        version: 3.5.33
       '@types/jsonwebtoken':
         specifier: ^9.0.9
         version: 9.0.10
@@ -903,8 +903,8 @@ packages:
   '@types/http-errors@2.0.5':
     resolution: {integrity: sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==}
 
-  '@types/jquery@3.5.32':
-    resolution: {integrity: sha512-b9Xbf4CkMqS02YH8zACqN1xzdxc3cO735Qe5AbSUFmyOiaWAbcpqh9Wna+Uk0vgACvoQHpWDg2rGdHkYPLmCiQ==}
+  '@types/jquery@3.5.33':
+    resolution: {integrity: sha512-SeyVJXlCZpEki5F0ghuYe+L+PprQta6nRZqhONt9F13dWBtR/ftoaIbdRQ7cis7womE+X2LKhsDdDtkkDhJS6g==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -948,8 +948,8 @@ packages:
   '@types/shelljs@0.8.17':
     resolution: {integrity: sha512-IDksKYmQA2W9MkQjiyptbMmcQx+8+Ol6b7h6dPU5S05JyiQDSb/nZKnrMrZqGwgV6VkVdl6/SPCKPDlMRvqECg==}
 
-  '@types/sizzle@2.3.3':
-    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
+  '@types/sizzle@2.3.10':
+    resolution: {integrity: sha512-TC0dmN0K8YcWEAEfiPi5gJP14eJe30TTGjkvek3iM/1NdHHsdCA/Td6GvNndMOo/iSnIsZ4HuuhrYPDAmbxzww==}
 
   '@types/superagent@8.1.9':
     resolution: {integrity: sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==}
@@ -4158,9 +4158,9 @@ snapshots:
 
   '@types/http-errors@2.0.5': {}
 
-  '@types/jquery@3.5.32':
+  '@types/jquery@3.5.33':
     dependencies:
-      '@types/sizzle': 2.3.3
+      '@types/sizzle': 2.3.10
 
   '@types/json-schema@7.0.15': {}
 
@@ -4210,7 +4210,7 @@ snapshots:
       '@types/node': 22.18.0
       glob: 11.0.3
 
-  '@types/sizzle@2.3.3': {}
+  '@types/sizzle@2.3.10': {}
 
   '@types/superagent@8.1.9':
     dependencies:
