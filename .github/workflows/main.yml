@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js 20.17.0
         uses: actions/setup-node@v6
         with:
-            node-version: 22.20.0
+            node-version: 24.11.0
             cache: 'pnpm'
       - name: MongoDB in GitHub Actions
         uses: supercharge/mongodb-github-action@1.12.0
