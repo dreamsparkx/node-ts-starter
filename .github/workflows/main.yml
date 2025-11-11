@@ -19,7 +19,7 @@ jobs:
             node-version: 24.11.0
             cache: 'pnpm'
       - name: MongoDB in GitHub Actions
-        uses: supercharge/mongodb-github-action@1.12.0
+        uses: supercharge/mongodb-github-action@1.12.1
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - name: pnpm install, build, test and doc
