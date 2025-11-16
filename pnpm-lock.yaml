@@ -61,7 +61,7 @@ importers:
         version: 1.7.0
       mongoose:
         specifier: ^8.12.1
-        version: 8.19.2
+        version: 8.19.4
       openapi-to-postmanv2:
         specifier: ^5.0.0
         version: 5.3.3
@@ -2498,8 +2498,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.19.2:
-    resolution: {integrity: sha512-ww2T4dBV+suCbOfG5YPwj9pLCfUVyj8FEA1D3Ux1HHqutpLxGyOYEPU06iPRBW4cKr3PJfOSYsIpHWPTkz5zig==}
+  mongoose@8.19.4:
+    resolution: {integrity: sha512-yiY/Wv6FUYDQ4kBN1RQHiYuayQS4k+yzytj4nctMmQiBIXLfJqvw6fRgmvw1rIOmShp7iAbpNt7s2s6TyVOSyA==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -5818,7 +5818,7 @@ snapshots:
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
 
-  mongoose@8.19.2:
+  mongoose@8.19.4:
     dependencies:
       bson: 6.10.4
       kareem: 2.6.3
