@@ -22,7 +22,7 @@ importers:
         version: 1.8.1
       connect-mongo:
         specifier: ^6.0.0
-        version: 6.0.0(express-session@1.18.2)(mongodb@7.0.0)
+        version: 6.0.0(express-session@1.19.0)(mongodb@7.0.0)
       cors:
         specifier: ^2.8.5
         version: 2.8.6
@@ -40,7 +40,7 @@ importers:
         version: 0.0.2
       express-session:
         specifier: ^1.18.1
-        version: 1.18.2
+        version: 1.19.0
       express-winston:
         specifier: ^4.2.0
         version: 4.2.0(winston@3.19.0)
@@ -1728,8 +1728,8 @@ packages:
     resolution: {integrity: sha512-QVUR0ZZRCaa8+iPHoUQaQJrQWcQuK/Q+19M7IUIdIEtvwhrA/ifHT7y1CVJI41YfGiOQnbGtn3uvd2vOdgu58A==}
     engines: {node: '>= 0.8.0'}
 
-  express-session@1.18.2:
-    resolution: {integrity: sha512-SZjssGQC7TzTs9rpPDuUrR23GNZ9+2+IkA/+IJWmvQilTr5OSliEHGF+D9scbIpdC6yGtTI0/VhaHoVes2AN/A==}
+  express-session@1.19.0:
+    resolution: {integrity: sha512-0csaMkGq+vaiZTmSMMGkfdCOabYv192VbytFypcvI0MANrp+4i/7yEkJ0sbAEhycQjntaKGzYfjfXQyVb7BHMA==}
     engines: {node: '>= 0.8.0'}
 
   express-winston@4.2.0:
@@ -4585,10 +4585,10 @@ snapshots:
 
   connect-flash@0.1.1: {}
 
-  connect-mongo@6.0.0(express-session@1.18.2)(mongodb@7.0.0):
+  connect-mongo@6.0.0(express-session@1.19.0)(mongodb@7.0.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
-      express-session: 1.18.2
+      express-session: 1.19.0
       kruptein: 3.0.8
       mongodb: 7.0.0
     transitivePeerDependencies:
@@ -4899,7 +4899,7 @@ snapshots:
     dependencies:
       connect-flash: 0.1.1
 
-  express-session@1.18.2:
+  express-session@1.19.0:
     dependencies:
       cookie: 0.7.2
       cookie-signature: 1.0.7
