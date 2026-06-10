@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "24",
-    "pnpm": "^10"
+    "pnpm": "^11.0.0"
   },
   "scripts": {
     "build-sass": "sass src/public/css/main.scss dist/public/css/main.css",
